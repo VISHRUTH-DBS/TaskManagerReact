@@ -28,7 +28,7 @@ const AllTasks = () => {
     return (
         <div className="w-[70%] mx-auto">
             <div className="mt-10">
-                <h1 className="text-3xl font-bold my-8 text-center">Task Board</h1>
+                <h1 className="text-3xl ubuntu-bold my-8 text-center">Task Board</h1>
                 <div className="flex justify-between items-center">
                     <div onClick={() => { settoggle(!toggle) }} className="flex justify-center items-center p-2 bg-indigo-500 rounded-xl">
                         {toggle ? (<IoClose className="text-xl text-white" />) : (<IoFilterSharp className="text-xl text-white" />)}

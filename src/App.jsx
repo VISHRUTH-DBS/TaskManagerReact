@@ -11,6 +11,8 @@ import Dashboard from './components/Dashboard';
 import PendingTask from './components/PendingTask';
 import Deployed from './components/Deployed';
 import Deferred from './components/Deferred';
+import './App.css'
+
 
 const App = () => {
 

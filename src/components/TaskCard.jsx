@@ -55,12 +55,12 @@ const TaskCard = ({
                     status
                 )} shadow-md h-45`}
             >
-                <h1 className="font-bold text-end pt-2 pr-3 text-sm">{`${priority}`}</h1>
-                <h1 className="font-bold text-center text-xl py-4 mb-5">{`${title}`}</h1>
+                <h1 className="anton-regular text-end pt-2 pr-3 text-sm">{`${priority}`}</h1>
+                <h1 className="font-bold text-center text-xl py-4 mb-5 ubuntu-bold">{`${title}`}</h1>
             </div>
             <div className="border-0 p-2 text-center">
-                <p className="font-semibold ">{`${description}`}</p>
-                <div className="flex justify-between text-sm font-semibold py-2 px-4">
+                <p className="poppins-light ">{`${description}`}</p>
+                <div className="flex justify-between mt-[5px] text-sm font-semibold py-2 px-4">
                     <div className="flex justify-center flex-col">
                         <p>Start Date</p>
                         <p className="font-light">{`${startDatee}`}</p>

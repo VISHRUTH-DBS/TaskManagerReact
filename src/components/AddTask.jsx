@@ -46,8 +46,8 @@ const AddTask = () => {
         e.preventDefault();
         const serializableFormData = {
             ...formData,
-            startDate: formData.startDate.toISOString(), 
-            endDate: formData.endDate ? formData.endDate.toISOString() : null 
+            startDate: formData.startDate.toISOString(),
+            endDate: formData.endDate ? formData.endDate.toISOString() : null
         };
         console.log(serializableFormData);
         dispatch(addTask(serializableFormData));
@@ -109,7 +109,7 @@ const AddTask = () => {
                                     selected={formData.startDate}
                                     onChange={handleStartDateChange}
                                     dateFormat="dd/MM/yyyy"
-                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    className="appearance-none block w-[280px] sm:w-[245px] bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 />
                             </div>
                             <div className="w-full md:w-1/2 px-3 mb-2 sm:mb-6 md:mb-0">
@@ -120,7 +120,7 @@ const AddTask = () => {
                                     selected={formData.endDate}
                                     onChange={handleEndDateChange}
                                     dateFormat="dd/MM/yyyy"
-                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    className="appearance-none block w-[280px] sm:w-[245px] bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 />
                             </div>
                         </div>
@@ -160,7 +160,7 @@ const AddTask = () => {
                                 </select>
                             </div>
                         </div>
-                        <button type='submit' className='w-full p-3 bg-indigo-500 rounded-lg text-center text-white hover:bg-indigo-300'>Add</button>
+                        <button type='submit' className='mt-8 w-full p-3 bg-indigo-500 rounded-lg text-center text-white hover:bg-indigo-300'>Add</button>
                     </form>
                 </div>
             </div>

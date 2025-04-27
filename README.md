@@ -53,6 +53,14 @@ http://localhost:5173/
 
 -**Git/GitHub** for version control
 
+## Deploment Link
+
+https://taskmanagervishruth.netlify.app/
+
+## Snap of App
+
+![Screenshot 2025-04-27 232347](https://github.com/user-attachments/assets/443d6755-e70c-45de-9c34-c6e5d7308e08)
+
 
 ## Future Improvements
 

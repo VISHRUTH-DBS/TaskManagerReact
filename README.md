@@ -14,7 +14,7 @@ How to Run the Project
 
 1. Clone the repository
 
-git clone https://github.com/VISHRUTH-DBS/TaskManagerReact.git![Uploading Screenshot 2025-04-27 232347.png…]()
+git clone https://github.com/VISHRUTH-DBS/TaskManagerReact.git
 
 2. Navigate into the project folder
 

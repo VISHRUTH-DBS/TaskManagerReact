@@ -2,9 +2,12 @@ import TaskCard from "./TaskCard";
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../store/taskSlice';
 import { Link } from "react-router-dom";
+
 const InProgressTask = () => {
     const tasks = useSelector(selectAllTasks);
-    const completedTasks = tasks.filter(task => task.status === 'In Progress');
+
+    // Filter tasks by 'In Progress' status
+    const inProgressTasks = tasks.filter(task => task.status === 'In Progress');
 
     return (
         <div className="w-[70%] mx-auto">
@@ -12,9 +15,9 @@ const InProgressTask = () => {
                 <h1 className="text-3xl font-bold my-8 text-center">In Progress Tasks</h1>
             </div>
             {
-                completedTasks.length > 0 ? (
+                inProgressTasks.length > 0 ? (
                     <div className="flex flex-wrap gap-y-4 gap-x-14 overflow-y-scroll mt-5 h-[50vh] sm:h-[80vh] justify-center">
-                        {completedTasks.map(task => (
+                        {inProgressTasks.map(task => (
                             <TaskCard
                                 key={task.id}
                                 title={task.title}
@@ -27,13 +30,14 @@ const InProgressTask = () => {
                             />
                         ))}
                     </div>
-                ) : (<div className="text-center mt-[17vh] sm:mt-[30vh]">
-                    <p>No tasks found. <Link to="/addTask" className="text-indigo-500">Add a new task</Link></p>
-                </div >)
+                ) : (
+                    <div className="text-center mt-[17vh] sm:mt-[30vh]">
+                        <p>No tasks found. <Link to="/addTask" className="text-indigo-500">Add a new task</Link></p>
+                    </div>
+                )
             }
         </div>
     );
 };
-
 
 export default InProgressTask;

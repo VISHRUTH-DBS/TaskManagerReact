@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 import { IoFilterSharp, IoClose } from "react-icons/io5";
 
 const AllTasks = () => {
-    const tasks = useSelector(selectAllTasks);
+    const tasks = useSelector(selectAllTasks) || []; // Ensure tasks is an array
     const [startDate, setStartDate] = useState(null);
     const [toggle, settoggle] = useState(false);
     const [endDate, setEndDate] = useState(null);
     const [statusFilter, setStatusFilter] = useState("All");
     const [priorityFilter, setPriorityFilter] = useState("All");
 
-    const filteredTasks = tasks.filter((task) => {
+    const filteredTasks = Array.isArray(tasks) ? tasks.filter((task) => {
         const taskDate = new Date(task.startDate);
         const isDateInRange =
             (!startDate || taskDate >= startDate) &&
@@ -23,7 +23,7 @@ const AllTasks = () => {
         const isPriorityMatch =
             priorityFilter === "All" || task.priority === priorityFilter;
         return isDateInRange && isStatusMatch && isPriorityMatch;
-    });
+    }) : [];
 
     return (
         <div className="w-[70%] mx-auto">
@@ -32,8 +32,6 @@ const AllTasks = () => {
                 <div className="flex justify-between items-center">
                     <div onClick={() => { settoggle(!toggle) }} className="flex justify-center items-center p-2 bg-indigo-500 rounded-xl">
                         {toggle ? (<IoClose className="text-xl text-white" />) : (<IoFilterSharp className="text-xl text-white" />)}
-
-
                     </div>
                     <div className="text-indigo-500 font-semibold">All Task ({filteredTasks.length})</div>
                 </div>
@@ -115,5 +113,6 @@ const AllTasks = () => {
         </div>
     );
 };
+
 
 export default AllTasks;
